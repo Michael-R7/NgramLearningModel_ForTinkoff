@@ -11,7 +11,7 @@ import argparse
 
 def tokenize(text: str):
     text = text.lower()
-    for punct in string.punctuation + string.digits + '–':
+    for punct in string.punctuation + string.digits + 'вЂ“':
         text = text.replace(punct, '')
     tokens = text.split() 
     return tokens
@@ -68,10 +68,10 @@ class NgramLanguageModel:
         if prefix == '':
             prefix = random.choice(list(self.ngram_context.keys()))
             prefix = ' '.join(prefix)
-            print('Случайный префикс:', prefix)
+            print('Г‘Г«ГіГ·Г Г©Г­Г»Г© ГЇГ°ГҐГґГЁГЄГ±: ', prefix)
         prefix_queue = tuple(tokenize(prefix))
         if prefix_queue not in self.ngram_context.keys():
-            return print('Данного префикса в словаре нет')
+            return print('Г„Г Г­Г­Г®ГЈГ® ГЇГ°ГҐГґГЁГЄГ±Г  Гў Г±Г«Г®ГўГ Г°ГҐ Г­ГҐГІ')
         n = len(prefix_queue) + 1
         generated_text = [word for word in prefix_queue]
         for _ in range(length):

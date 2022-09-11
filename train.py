@@ -84,7 +84,7 @@ class NgramLanguageModel:
 def main():
     parser = argparse.ArgumentParser()  
     parser.add_argument('--input-dir')
-    parser.add_argument('--length',type=int, required=True)
+    parser.add_argument('--length', type=int, required=True)
     parser.add_argument('--prefix', default='')
     args = parser.parse_args()
     tokens = []
